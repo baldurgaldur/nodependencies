@@ -1,0 +1,2 @@
+# nodependencies
+Embedded Jersey server 
