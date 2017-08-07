@@ -20,7 +20,8 @@ public class App
 
     logger.info("Starting server");
 
-    URI baseUri = UriBuilder.fromUri("http://localhost/").port(8080).build();
+    logger.info("we're gonna use port: " + System.getenv("port"));
+    URI baseUri = UriBuilder.fromUri("0.0.0.0").port(8080).build();
     ResourceConfig config = new ResourceConfig(WindowAction.class);
     Server server = JettyHttpContainerFactory.createServer(baseUri, config);
 
