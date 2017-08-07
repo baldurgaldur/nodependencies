@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target/server-0.jar
+web: java $JAVA_OPTS -Dserver.port=8080 -jar target/server-0.jar
