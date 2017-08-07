@@ -1,17 +1,35 @@
 package com.jarvis.server.rest.action;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import org.apache.log4j.Logger;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.Response;
 
 @Path("window")
 public class WindowAction
 {
+  static Logger logger = Logger.getLogger(WindowAction.class);
+
   @GET
-  @Produces(MediaType.TEXT_PLAIN)
-  public String getWindow()
+  public Response getWindow()
   {
-    return "hello world";
+    logger.info("window GET received");
+    return Response.ok(0).build();
+  }
+
+  @POST
+  @Path("up")
+  public Response moveUp()
+  {
+    logger.info("window POST up received");
+    return Response.ok().build();
+  }
+
+  @POST
+  @Path("down")
+  public Response moveDown()
+  {
+    logger.info("window POST down received");
+    return Response.ok().build();
   }
 }
