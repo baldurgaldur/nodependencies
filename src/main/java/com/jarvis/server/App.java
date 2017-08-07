@@ -20,7 +20,8 @@ public class App
 
     logger.info("Starting server");
 
-    URI baseUri = UriBuilder.fromUri("http://localhost/").port(9998).build();
+    //Port is configured in the Procfile
+    URI baseUri = UriBuilder.fromUri("http://localhost/").build();
     ResourceConfig config = new ResourceConfig(WindowAction.class);
     Server server = JettyHttpContainerFactory.createServer(baseUri, config);
 
